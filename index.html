@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="icon" type="image/png" href="initial-letter-gv-modern-linked-260nw-444686047.jpg">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        const currentHour = new Date().getHours();
+
+        function updateGreeting() {
+            const greetingElement = document.querySelector('.Welcomename');
+
+            if (currentHour >= 5 && currentHour < 12) {
+                greetingElement.textContent = 'Good morning! Guru:)';
+            } else if (currentHour >= 12 && currentHour < 18) {
+                greetingElement.textContent = 'Good afternoon! Guru:)';
+            } else {
+                greetingElement.textContent = 'Good evening! Guru:)';
+            }
+        }
+
+        window.onload = updateGreeting;
+    </script>
+</head>
+<body>
+    <div class="mainContainer">
+        <div class="Welcomename"></div>
+        <div class="Container">
+            <div class="linkedInPage">
+                <a href="https://www.linkedin.com/feed/" target="_parent">
+                    <img src="icons8-linkedin-100.png" alt="LinkedIn Logo" style="width: 50px; height: 50px;">
+                </a>
+            </div>
+            <div class="leetCodePage">
+                <a href="https://www.leetcode.com" target="_parent">
+                    <img src="icons8-level-up-your-coding-skills-and-quickly-land-a-job-96.png" alt="LeetCode Logo" style="width: 50px; height: 50px;">
+                </a>
+            </div>
+            <div class="youtubePage">
+                <a href="https://www.youtube.com/" target="_parent">
+                    <img src="icons8-youtube-96.png" alt="YouTube Logo" style="width: 50px; height: 50px;">
+                </a>
+            </div>
+            <div class="githubPage">
+                <a href="https://github.com/GURUVENKATESH03/" target="_parent">
+                    <img src="icons8-github-100.png" alt="Github Logo" style="width: 50px; height: 50px;">
+                </a>
+            </div>
+            <div class="perplexityPage">
+                <a href="https://www.perplexity.ai/" target="_parent">
+                    <img src="icons8-perplexity-ai-100.png" alt="PerplexityAI Logo" style="width: 50px; height: 50px;">
+                </a>
+            </div>
+        </div>
+        <div>
+            <div class="LineSep">--------------or--------------</div>
+        </div>
+        <div class="search-container">
+            <form method="get" action="https://www.google.com/search">
+                <input type="text" name="q" placeholder="Search anything..." required style="width: 250px; padding: 10px; font-size: 16px; border: 1px solid #ccc; border-radius: 4px;">
+                <button type="submit" style="padding: 10px 15px; font-size: 16px; border: none; background-color: black; color: white; border-radius: 4px; cursor: pointer;">Search</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
