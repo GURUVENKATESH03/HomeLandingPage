@@ -1,83 +1,17 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-    <link rel="icon" type="image/png" href="initial-letter-gv-modern-linked-260nw-444686047.jpg">
-    <link rel="stylesheet" href="styles.css">
-    <script>
-        const currentHour = new Date().getHours();
-
-        function updateGreeting() {
-            const greetingElement = document.querySelector('.Welcomename');
-
-            if (currentHour >= 5 && currentHour < 12) {
-                greetingElement.textContent = 'Good morning! Guru:)';
-            } else if (currentHour >= 12 && currentHour < 18) {
-                greetingElement.textContent = 'Good afternoon! Guru:)';
-            } else {
-                greetingElement.textContent = 'Good evening! Guru:)';
-            }
-        }
-
-        window.onload = updateGreeting;
-    </script>
-</head>
-<body>
-    <div class="mainContainer">
-        <div class="Welcomename"></div>
-        <div class="Container">
-            <div class="linkedInPage">
-                <a href="https://www.linkedin.com/feed/" target="_parent">
-                    <img src="icons8-linkedin-100.png" alt="LinkedIn Logo" style="width: 50px; height: 50px;">
-                </a>
-            </div>
-            <div class="leetCodePage">
-                <a href="https://www.leetcode.com" target="_parent">
-                    <img src="icons8-level-up-your-coding-skills-and-quickly-land-a-job-96.png" alt="LeetCode Logo" style="width: 50px; height: 50px;">
-                </a>
-            </div>
-            <div class="youtubePage">
-                <a href="https://www.youtube.com/" target="_parent">
-                    <img src="icons8-youtube-96.png" alt="YouTube Logo" style="width: 50px; height: 50px;">
-                </a>
-            </div>
-            <div class="githubPage">
-                <a href="https://github.com/GURUVENKATESH03/" target="_parent">
-                    <img src="icons8-github-100.png" alt="Github Logo" style="width: 50px; height: 50px;">
-                </a>
-            </div>
-            <div class="perplexityPage">
-                <a href="https://www.perplexity.ai/" target="_parent">
-                    <img src="icons8-perplexity-ai-100.png" alt="PerplexityAI Logo" style="width: 50px; height: 50px;">
-                </a>
-            </div>
-        </div>
-        <div>
-            <div class="LineSep">--------------or--------------</div>
-        </div>
-        <div class="search-container">
-            <form method="get" action="https://www.google.com/search">
-                <input type="text" name="q" placeholder="Search anything..." required style="width: 250px; padding: 10px; font-size: 16px; border: 1px solid #ccc; border-radius: 4px;">
-                <button type="submit" style="padding: 10px 15px; font-size: 16px; border: none; background-color: black; color: white; border-radius: 4px; cursor: pointer;">Search</button>
-            </form>
-        </div>
-    </div>
-</body>
-</html>
- -->
 <!DOCTYPE html>
-<html lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Guru's Portfolio</title>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<style type="text/tailwindcss">
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Guru's Portfolio</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style type="text/tailwindcss">
         :root {
             --primary-glow: #3d98f4;
             --background-start: #101a23;
@@ -94,6 +28,7 @@
         body {
             font-family: 'Space Grotesk', sans-serif;
             overflow: hidden;
+
         }
         .glowing-border {
             box-shadow: 0 0 5px var(--primary-glow), 0 0 10px var(--primary-glow), 0 0 15px var(--primary-glow);
@@ -161,224 +96,303 @@
         }
     </style>
 </head>
+
 <body class="bg-gradient-to-br from-[var(--background-start)] to-[var(--background-end)] text-[var(--text-primary)]">
-<div class="particle-container">
-<div class="particle" style="width: 1px; height: 1px; left: 5%; animation-delay: -5s; animation-duration: 45s;"></div>
-<div class="particle" style="width: 2px; height: 2px; left: 10%; animation-delay: -10s; animation-duration: 38s;"></div>
-<div class="particle" style="width: 1px; height: 1px; left: 15%; animation-delay: -15s; animation-duration: 50s;"></div>
-<div class="particle" style="width: 2px; height: 2px; left: 20%; animation-delay: -2s; animation-duration: 42s;"></div>
-<div class="particle" style="width: 3px; height: 3px; left: 25%; animation-delay: -8s; animation-duration: 35s;"></div>
-<div class="particle" style="width: 1px; height: 1px; left: 30%; animation-delay: -12s; animation-duration: 55s;"></div>
-<div class="particle" style="width: 2px; height: 2px; left: 35%; animation-delay: -20s; animation-duration: 40s;"></div>
-<div class="particle" style="width: 1px; height: 1px; left: 40%; animation-delay: -3s; animation-duration: 48s;"></div>
-<div class="particle" style="width: 3px; height: 3px; left: 45%; animation-delay: -18s; animation-duration: 33s;"></div>
-<div class="particle" style="width: 1px; height: 1px; left: 50%; animation-delay: -6s; animation-duration: 52s;"></div>
-<div class="particle" style="width: 2px; height: 2px; left: 55%; animation-delay: -14s; animation-duration: 37s;"></div>
-<div class="particle" style="width: 2px; height: 2px; left: 60%; animation-delay: -22s; animation-duration: 44s;"></div>
-<div class="particle" style="width: 1px; height: 1px; left: 65%; animation-delay: -1s; animation-duration: 58s;"></div>
-<div class="particle" style="width: 3px; height: 3px; left: 70%; animation-delay: -9s; animation-duration: 31s;"></div>
-<div class="particle" style="width: 2px; height: 2px; left: 75%; animation-delay: -17s; animation-duration: 39s;"></div>
-<div class="particle" style="width: 1px; height: 1px; left: 80%; animation-delay: -4s; animation-duration: 46s;"></div>
-<div class="particle" style="width: 2px; height: 2px; left: 85%; animation-delay: -11s; animation-duration: 36s;"></div>
-<div class="particle" style="width: 1px; height: 1px; left: 90%; animation-delay: -19s; animation-duration: 53s;"></div>
-<div class="particle" style="width: 3px; height: 3px; left: 95%; animation-delay: -7s; animation-duration: 32s;"></div>
-</div>
-<main class="relative flex flex-col items-center justify-center min-h-screen p-4">
-<div class="w-full max-w-2xl text-center space-y-8">
-<h1 class="text-5xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 greeting-glow" id="greeting">Good Evening, Guru</h1>
-<form action="https://www.google.com/search" class="group" method="get">
-<div class="relative">
-<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-<svg class="h-6 w-6 text-[var(--icon-color)]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-</svg>
-</div>
-<input autocomplete="off" class="w-full h-14 pl-12 pr-4 bg-[var(--input-bg)] text-lg text-[var(--text-primary)] placeholder-gray-500 border-2 border-transparent rounded-full focus:outline-none focus:ring-2 focus:ring-[var(--primary-glow)] focus:border-[var(--primary-glow)] transition-all duration-300 glowing-border" name="q" placeholder="Search Google..." type="text"/>
-</div>
-</form>
-<div class="flex justify-center items-center space-x-6">
-<a class="text-[var(--icon-color)] hover:text-[var(--primary-glow)] transition-colors duration-300 transform hover:scale-110" href="#">
-<svg aria-hidden="true" class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" fill-rule="evenodd"></path></svg>
-</a>
-<a class="text-[var(--icon-color)] hover:text-[var(--primary-glow)] transition-colors duration-300 transform hover:scale-110" href="#">
-<svg aria-hidden="true" class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>
-</a>
-<a class="text-[var(--icon-color)] hover:text-[var(--primary-glow)] transition-colors duration-300 transform hover:scale-110" href="#">
-<svg aria-hidden="true" class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M13.48,11.33,12,14.5,10.52,11.33,7,12,10.52,9.47,12,6,13.48,9.47,17,12ZM12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"></path></svg>
-</a>
-<a class="text-[var(--icon-color)] hover:text-[var(--primary-glow)] transition-colors duration-300 transform hover:scale-110" href="#">
-<svg aria-hidden="true" class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12 9.545 15.568z"></path></svg>
-</a>
-<a class="text-[var(--icon-color)] hover:text-[var(--primary-glow)] transition-colors duration-300 transform hover:scale-110" href="#">
-<svg class="w-8 h-8" fill="currentColor" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm-8,14.73a88.11,88.11,0,0,1,8,0c2.42.26,4.8,1.45,6.67,3.33s3.07,4.25,3.33,6.67a88.11,88.11,0,0,1,0,8c-.26,2.42-1.45,4.8-3.33,6.67s-4.25,3.07-6.67,3.33a88.11,88.11,0,0,1-8,0c-2.42-.26-4.8-1.45-6.67-3.33s-3.07-4.25-3.33-6.67a88.11,88.11,0,0,1,0-8c.26-2.42,1.45-4.8,3.33-6.67S117.58,39,120,38.73ZM128,216a88.11,88.11,0,0,1-8,0c-21.43-2.31-38.2-13.43-48.82-29.28-11.53-17.18-12.8-38-3.9-57.39S94,94,115.39,84.7s42.23-3,57.39,3.9c16.85,7.63,29.28,22,35,40.82a8,8,0,0,1-15.06,5.46c-4.86-16.3-15.3-28.17-29.4-34.48s-30.85-5-44.18.28-24,16-27.86,30.73c-4.23,16.1,1.15,33.24,11.53,46.59C104.18,197.8,119.89,206,136,206a8,8,0,0,1,0,16A88.11,88.11,0,0,1,128,216Z"></path></svg>
-</a>
-</div>
-</div>
-</main>
-<footer class="fixed bottom-0 left-0 w-full bg-[var(--news-bg)] backdrop-blur-sm border-t border-[var(--news-border)]">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="flex items-center justify-between border-b border-[var(--news-border)]" data-tabs-container="">
-<div class="flex items-center space-x-4">
-<button class="px-4 py-3 text-lg font-bold text-[var(--text-primary)] border-b-2 border-transparent hover:border-[var(--primary-glow)] transition-colors duration-300 active" data-tab-target="#tech">Technology</button>
-<button class="px-4 py-3 text-lg font-bold text-[var(--text-secondary)] hover:text-[var(--text-primary)] border-b-2 border-transparent hover:border-[var(--primary-glow)] transition-colors duration-300" data-tab-target="#business">Business</button>
-<button class="px-4 py-3 text-lg font-bold text-[var(--text-secondary)] hover:text-[var(--text-primary)] border-b-2 border-transparent hover:border-[var(--primary-glow)] transition-colors duration-300" data-tab-target="#sports">Sports</button>
-<button class="flex items-center space-x-2 px-4 py-3 text-lg font-bold text-[var(--text-secondary)] hover:text-[var(--text-primary)] border-b-2 border-transparent hover:border-[var(--primary-glow)] transition-colors duration-300" data-tab-target="#saved">
-<i class="material-icons text-xl">bookmark_border</i>
-<span>Saved Articles</span>
-</button>
-</div>
-<div class="relative w-1/3">
-<input class="w-full bg-[var(--input-bg)] bg-opacity-50 text-sm text-[var(--text-secondary)] placeholder-[var(--text-secondary)] border border-[var(--news-border)] rounded-full py-2 px-4 pl-10 focus:outline-none focus:ring-1 focus:ring-[var(--primary-glow)] transition-colors duration-300" placeholder="Search News..." type="text"/>
-<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-<i class="material-icons text-base text-[var(--icon-color)]">search</i>
-</div>
-</div>
-</div>
-<div class="py-3 overflow-hidden">
-<div class="active" data-tab-content="" id="tech">
-<div class="flex whitespace-nowrap news-ticker">
-<div class="flex items-center flex-shrink-0 group">
-<a class="mx-4 text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors duration-300" href="#">Major tech conference announces new AI breakthroughs.</a>
-<button class="opacity-0 group-hover:opacity-100 text-[var(--icon-color)] hover:text-[var(--primary-glow)] transition-opacity duration-300"><i class="material-icons text-lg">bookmark_border</i></button>
-<span class="text-[var(--icon-color)] mx-4">•</span>
-<a class="mx-4 text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors duration-300" href="#">New exoplanet discovered with potential for liquid water.</a>
-<button class="opacity-0 group-hover:opacity-100 text-[var(--icon-color)] hover:text-[var(--primary-glow)] transition-opacity duration-300"><i class="material-icons text-lg">bookmark_border</i></button>
-<span class="text-[var(--icon-color)] mx-4">•</span>
-<a class="mx-4 text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors duration-300" href="#">Cybersecurity firm warns of a new global threat.</a>
-<button class="opacity-0 group-hover:opacity-100 text-[var(--icon-color)] hover:text-[var(--primary-glow)] transition-opacity duration-300"><i class="material-icons text-lg">bookmark_border</i></button>
-</div>
-<div aria-hidden="true" class="flex items-center flex-shrink-0 group">
-<a class="mx-4 text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors duration-300" href="#">Major tech conference announces new AI breakthroughs.</a>
-<button class="opacity-0 group-hover:opacity-100 text-[var(--icon-color)] hover:text-[var(--primary-glow)] transition-opacity duration-300"><i class="material-icons text-lg">bookmark_border</i></button>
-<span class="text-[var(--icon-color)] mx-4">•</span>
-<a class="mx-4 text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors duration-300" href="#">New exoplanet discovered with potential for liquid water.</a>
-<button class="opacity-0 group-hover:opacity-100 text-[var(--icon-color)] hover:text-[var(--primary-glow)] transition-opacity duration-300"><i class="material-icons text-lg">bookmark_border</i></button>
-<span class="text-[var(--icon-color)] mx-4">•</span>
-<a class="mx-4 text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors duration-300" href="#">Cybersecurity firm warns of a new global threat.</a>
-<button class="opacity-0 group-hover:opacity-100 text-[var(--icon-color)] hover:text-[var(--primary-glow)] transition-opacity duration-300"><i class="material-icons text-lg">bookmark_border</i></button>
-</div>
-</div>
-</div>
-<div data-tab-content="" id="business">
-<div class="flex whitespace-nowrap news-ticker">
-<div class="flex items-center flex-shrink-0 group">
-<a class="mx-4 text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors duration-300" href="#">Global markets react to latest inflation data.</a>
-<button class="opacity-0 group-hover:opacity-100 text-[var(--icon-color)] hover:text-[var(--primary-glow)] transition-opacity duration-300"><i class="material-icons text-lg">bookmark_border</i></button>
-<span class="text-[var(--icon-color)] mx-4">•</span>
-<a class="mx-4 text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors duration-300" href="#">Major corporation announces record-breaking quarterly earnings.</a>
-<button class="opacity-0 group-hover:opacity-100 text-[var(--icon-color)] hover:text-[var(--primary-glow)] transition-opacity duration-300"><i class="material-icons text-lg">bookmark_border</i></button>
-<span class="text-[var(--icon-color)] mx-4">•</span>
-<a class="mx-4 text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors duration-300" href="#">Experts predict a shift in consumer spending habits.</a>
-<button class="opacity-0 group-hover:opacity-100 text-[var(--icon-color)] hover:text-[var(--primary-glow)] transition-opacity duration-300"><i class="material-icons text-lg">bookmark_border</i></button>
-</div>
-<div aria-hidden="true" class="flex items-center flex-shrink-0 group">
-<a class="mx-4 text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors duration-300" href="#">Global markets react to latest inflation data.</a>
-<button class="opacity-0 group-hover:opacity-100 text-[var(--icon-color)] hover:text-[var(--primary-glow)] transition-opacity duration-300"><i class="material-icons text-lg">bookmark_border</i></button>
-<span class="text-[var(--icon-color)] mx-4">•</span>
-<a class="mx-4 text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors duration-300" href="#">Major corporation announces record-breaking quarterly earnings.</a>
-<button class="opacity-0 group-hover:opacity-100 text-[var(--icon-color)] hover:text-[var(--primary-glow)] transition-opacity duration-300"><i class="material-icons text-lg">bookmark_border</i></button>
-<span class="text-[var(--icon-color)] mx-4">•</span>
-<a class="mx-4 text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors duration-300" href="#">Experts predict a shift in consumer spending habits.</a>
-<button class="opacity-0 group-hover:opacity-100 text-[var(--icon-color)] hover:text-[var(--primary-glow)] transition-opacity duration-300"><i class="material-icons text-lg">bookmark_border</i></button>
-</div>
-</div>
-</div>
-<div data-tab-content="" id="sports">
-<div class="flex whitespace-nowrap news-ticker">
-<div class="flex items-center flex-shrink-0 group">
-<a class="mx-4 text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors duration-300" href="#">Underdog team pulls off a stunning victory in championship game.</a>
-<button class="opacity-0 group-hover:opacity-100 text-[var(--icon-color)] hover:text-[var(--primary-glow)] transition-opacity duration-300"><i class="material-icons text-lg">bookmark_border</i></button>
-<span class="text-[var(--icon-color)] mx-4">•</span>
-<a class="mx-4 text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors duration-300" href="#">Record-breaking performance in the latest marathon.</a>
-<button class="opacity-0 group-hover:opacity-100 text-[var(--icon-color)] hover:text-[var(--primary-glow)] transition-opacity duration-300"><i class="material-icons text-lg">bookmark_border</i></button>
-<span class="text-[var(--icon-color)] mx-4">•</span>
-<a class="mx-4 text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors duration-300" href="#">Star athlete signs a historic contract extension.</a>
-<button class="opacity-0 group-hover:opacity-100 text-[var(--icon-color)] hover:text-[var(--primary-glow)] transition-opacity duration-300"><i class="material-icons text-lg">bookmark_border</i></button>
-</div>
-<div aria-hidden="true" class="flex items-center flex-shrink-0 group">
-<a class="mx-4 text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors duration-300" href="#">Underdog team pulls off a stunning victory in championship game.</a>
-<button class="opacity-0 group-hover:opacity-100 text-[var(--icon-color)] hover:text-[var(--primary-glow)] transition-opacity duration-300"><i class="material-icons text-lg">bookmark_border</i></button>
-<span class="text-[var(--icon-color)] mx-4">•</span>
-<a class="mx-4 text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors duration-300" href="#">Record-breaking performance in the latest marathon.</a>
-<button class="opacity-0 group-hover:opacity-100 text-[var(--icon-color)] hover:text-[var(--primary-glow)] transition-opacity duration-300"><i class="material-icons text-lg">bookmark_border</i></button>
-<span class="text-[var(--icon-color)] mx-4">•</span>
-<a class="mx-4 text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors duration-300" href="#">Star athlete signs a historic contract extension.</a>
-<button class="opacity-0 group-hover:opacity-100 text-[var(--icon-color)] hover:text-[var(--primary-glow)] transition-opacity duration-300"><i class="material-icons text-lg">bookmark_border</i></button>
-</div>
-</div>
-</div>
-<div class="max-h-32 overflow-y-auto" data-tab-content="" id="saved">
-<div class="py-4 px-4 space-y-3">
-<div class="flex items-center justify-between p-3 rounded-lg bg-[var(--input-bg)] bg-opacity-70 border border-[var(--news-border)] hover:border-[var(--primary-glow)] transition-colors duration-300">
-<a class="text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors duration-300" href="#">Cybersecurity firm warns of a new global threat.</a>
-<button class="text-[var(--icon-color)] hover:text-[var(--primary-glow)] transition-colors duration-300"><i class="material-icons text-lg">bookmark</i></button>
-</div>
-<div class="flex items-center justify-between p-3 rounded-lg bg-[var(--input-bg)] bg-opacity-70 border border-[var(--news-border)] hover:border-[var(--primary-glow)] transition-colors duration-300">
-<a class="text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors duration-300" href="#">Major corporation announces record-breaking quarterly earnings.</a>
-<button class="text-[var(--icon-color)] hover:text-[var(--primary-glow)] transition-colors duration-300"><i class="material-icons text-lg">bookmark</i></button>
-</div>
-<div class="text-center text-[var(--text-secondary)] py-2 hidden">No saved articles yet.</div>
-</div>
-</div>
-</div>
-</div>
-</footer>
-<script>
-      // A simple script to set the greeting based on the time of day.
-      const greetingElement = document.getElementById('greeting');
-      const hour = new Date().getHours();
-      if (hour < 12) {
-        greetingElement.textContent = 'Good Morning, Guru';
-      } else if (hour < 18) {
-        greetingElement.textContent = 'Good Afternoon, Guru';
-      } else {
-        greetingElement.textContent = 'Good Evening, Guru';
-      }
-      // Tab functionality
-      const tabs = document.querySelectorAll('[data-tab-target]');
-      const tabContents = document.querySelectorAll('[data-tab-content]');
-      tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-          const target = document.querySelector(tab.dataset.tabTarget);
-          const isSavedTab = tab.dataset.tabTarget === '#saved';
-          const mainContent = document.querySelector('main');
-          const footer = document.querySelector('footer');
-          if(isSavedTab) {
-              mainContent.style.display = 'none';
-              footer.style.position = 'static';
-              document.body.style.overflow = 'auto';
-              const savedArticlesContainer = document.getElementById('saved');
-              savedArticlesContainer.style.height = 'calc(100vh - ' + footer.querySelector('.border-b').offsetHeight + 'px)';
-              savedArticlesContainer.classList.remove('max-h-32');
-              savedArticlesContainer.classList.add('h-full');
-          } else {
-              mainContent.style.display = 'flex';
-              footer.style.position = 'fixed';
-              document.body.style.overflow = 'hidden';
-              const savedArticlesContainer = document.getElementById('saved');
-              savedArticlesContainer.classList.add('max-h-32');
-              savedArticlesContainer.classList.remove('h-full');
-          }
-          tabContents.forEach(tabContent => {
-            tabContent.classList.remove('active');
-          })
-          tabs.forEach(t => {
-            t.classList.remove('active');
-            t.classList.remove('text-[var(--text-primary)]');
-            t.classList.add('text-[var(--text-secondary)]');
-            t.style.borderColor = 'transparent';
-          })
-          tab.classList.add('active');
-          tab.classList.remove('text-[var(--text-secondary)]');
-          tab.classList.add('text-[var(--text-primary)]');
-          tab.style.borderColor = 'var(--tab-active-border)';
-          target.classList.add('active');
-        })
-      });
-      // Set initial active tab border
-      const activeTab = document.querySelector('[data-tab-target].active');
-      if (activeTab) {
-        activeTab.style.borderColor = 'var(--tab-active-border)';
-      }
+    <div class="particle-container">
+        <div class="particle" style="width: 1px; height: 1px; left: 5%; animation-delay: -5s; animation-duration: 45s;">
+        </div>
+        <div class="particle"
+            style="width: 2px; height: 2px; left: 10%; animation-delay: -10s; animation-duration: 38s;"></div>
+        <div class="particle"
+            style="width: 1px; height: 1px; left: 15%; animation-delay: -15s; animation-duration: 50s;"></div>
+        <div class="particle"
+            style="width: 2px; height: 2px; left: 20%; animation-delay: -2s; animation-duration: 42s;"></div>
+        <div class="particle"
+            style="width: 3px; height: 3px; left: 25%; animation-delay: -8s; animation-duration: 35s;"></div>
+        <div class="particle"
+            style="width: 1px; height: 1px; left: 30%; animation-delay: -12s; animation-duration: 55s;"></div>
+        <div class="particle"
+            style="width: 2px; height: 2px; left: 35%; animation-delay: -20s; animation-duration: 40s;"></div>
+        <div class="particle"
+            style="width: 1px; height: 1px; left: 40%; animation-delay: -3s; animation-duration: 48s;"></div>
+        <div class="particle"
+            style="width: 3px; height: 3px; left: 45%; animation-delay: -18s; animation-duration: 33s;"></div>
+        <div class="particle"
+            style="width: 1px; height: 1px; left: 50%; animation-delay: -6s; animation-duration: 52s;"></div>
+        <div class="particle"
+            style="width: 2px; height: 2px; left: 55%; animation-delay: -14s; animation-duration: 37s;"></div>
+        <div class="particle"
+            style="width: 2px; height: 2px; left: 60%; animation-delay: -22s; animation-duration: 44s;"></div>
+        <div class="particle"
+            style="width: 1px; height: 1px; left: 65%; animation-delay: -1s; animation-duration: 58s;"></div>
+        <div class="particle"
+            style="width: 3px; height: 3px; left: 70%; animation-delay: -9s; animation-duration: 31s;"></div>
+        <div class="particle"
+            style="width: 2px; height: 2px; left: 75%; animation-delay: -17s; animation-duration: 39s;"></div>
+        <div class="particle"
+            style="width: 1px; height: 1px; left: 80%; animation-delay: -4s; animation-duration: 46s;"></div>
+        <div class="particle"
+            style="width: 2px; height: 2px; left: 85%; animation-delay: -11s; animation-duration: 36s;"></div>
+        <div class="particle"
+            style="width: 1px; height: 1px; left: 90%; animation-delay: -19s; animation-duration: 53s;"></div>
+        <div class="particle"
+            style="width: 3px; height: 3px; left: 95%; animation-delay: -7s; animation-duration: 32s;"></div>
+    </div>
+    <main class="relative flex flex-col items-center justify-center min-h-screen p-4">
+        <div class="w-full max-w-2xl text-center space-y-8">
+            <h1 class="text-5xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 greeting-glow"
+                id="greeting">Good Evening, Guru</h1>
+            <form action="https://www.bing.com/search" class="group" method="get">
+                <div class="relative">
+                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                        <svg class="h-6 w-6 text-[var(--icon-color)]" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2"></path>
+                        </svg>
+                    </div>
+                    <input autocomplete="off"
+                        class="w-full h-14 pl-12 pr-4 bg-[var(--input-bg)] text-lg text-[var(--text-primary)] placeholder-gray-500 border-2 border-transparent rounded-full focus:outline-none focus:ring-2 focus:ring-[var(--primary-glow)] focus:border-[var(--primary-glow)] transition-all duration-300 glowing-border"
+                        name="q" placeholder="Search Bing..." type="text" />
+                </div>
+            </form>
+            <div class="flex justify-center items-center space-x-6">
+                <a class="text-[var(--icon-color)] hover:text-[var(--primary-glow)] transition-colors duration-300 transform hover:scale-110"
+                    href="#">
+                    <svg aria-hidden="true" class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                        <path clip-rule="evenodd"
+                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                            fill-rule="evenodd"></path>
+                    </svg>
+                </a>
+                <a class="text-[var(--icon-color)] hover:text-[var(--primary-glow)] transition-colors duration-300 transform hover:scale-110"
+                    href="#">
+                    <svg aria-hidden="true" class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z">
+                        </path>
+                    </svg>
+                </a>
+                <a class="text-[var(--icon-color)] hover:text-[var(--primary-glow)] transition-colors duration-300 transform hover:scale-110"
+                    href="#">
+                    <svg aria-hidden="true" class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20 4H4C2.9 4 2 4.9 2 6v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 2v.01L12 13 4 6.01V6h16zM4 18V8l8 5 8-5v10H4z"/>
+                    </svg>
+
+                </a>
+                <a class="text-[var(--icon-color)] hover:text-[var(--primary-glow)] transition-colors duration-300 transform hover:scale-110"
+                    href="#">
+                    <svg aria-hidden="true" class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.52 3.48A11.87 11.87 0 0 0 12 0a11.87 11.87 0 0 0-8.52 3.48A11.87 11.87 0 0 0 0 12a11.7 11.7 0 0 0 1.64 6.02L0 24l6.24-1.63A11.83 11.83 0 0 0 12 24a11.87 11.87 0 0 0 8.52-3.48A11.87 11.87 0 0 0 24 12a11.87 11.87 0 0 0-3.48-8.52zM12 22c-1.72 0-3.41-.44-4.9-1.28l-.35-.2-3.69.96.99-3.59-.23-.36A9.88 9.88 0 0 1 2 12a10 10 0 1 1 10 10zm5.25-7.22c-.3-.15-1.76-.87-2.03-.97s-.47-.15-.67.15-.77.97-.94 1.17-.35.22-.65.07a8.02 8.02 0 0 1-2.37-1.46 8.68 8.68 0 0 1-1.6-1.98c-.17-.3-.02-.47.13-.63.14-.14.3-.36.45-.54.15-.18.2-.3.3-.5s.05-.37-.02-.52c-.07-.15-.67-1.6-.92-2.19s-.5-.52-.67-.53h-.57c-.15 0-.52.07-.79.37s-1.03 1.01-1.03 2.45 1.05 2.84 1.2 3.04a11.38 11.38 0 0 0 4.03 3.67 11.71 11.71 0 0 0 1.88.7c.79.25 1.52.2 2.1.13.64-.1 1.96-.8 2.24-1.57.28-.76.28-1.41.2-1.57-.07-.16-.27-.24-.57-.38z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </main>
+    <footer
+        class="fixed bottom-0 left-0 w-full bg-[var(--news-bg)] backdrop-blur-sm border-t border-[var(--news-border)]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between border-b border-[var(--news-border)]" data-tabs-container="">
+                <div class="flex items-center space-x-4">
+                    <button
+                        class="px-4 py-3 text-lg font-bold text-[var(--text-primary)] border-b-2 border-transparent hover:border-[var(--primary-glow)] transition-colors duration-300 active"
+                        data-tab-target="#allnews">Java Related News</button>
+                    <button
+                        class="px-4 py-3 text-lg font-bold text-[var(--text-primary)] border-b-2 border-transparent hover:border-[var(--primary-glow)] transition-colors duration-300 active"
+                        data-tab-target="#tech">Technology</button>
+                    <button
+                        class="px-4 py-3 text-lg font-bold text-[var(--text-secondary)] hover:text-[var(--text-primary)] border-b-2 border-transparent hover:border-[var(--primary-glow)] transition-colors duration-300"
+                        data-tab-target="#business">Business</button>
+                    <button
+                        class="px-4 py-3 text-lg font-bold text-[var(--text-secondary)] hover:text-[var(--text-primary)] border-b-2 border-transparent hover:border-[var(--primary-glow)] transition-colors duration-300"
+                        data-tab-target="#sports">Sports</button>
+                    <button
+                        class="flex items-center space-x-2 px-4 py-3 text-lg font-bold text-[var(--text-secondary)] hover:text-[var(--text-primary)] border-b-2 border-transparent hover:border-[var(--primary-glow)] transition-colors duration-300"
+                        data-tab-target="#saved">
+                        <i class="material-icons text-xl">bookmark_border</i>
+                        <span>Saved Articles</span>
+                    </button>
+                </div>
+                <div class="relative w-1/3">
+                    <button onclick="getNews()">Get News</button>
+                </div>
+            </div>
+            <div class="py-3 overflow-hidden">
+                <div class="active" data-tab-content="" id="allnews">
+                    <div class="flex whitespace-nowrap news-ticker">
+                        <div class="flex items-center flex-shrink-0 group" id="java-news-ticker">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="active" data-tab-content="" id="tech">
+                    <div class="flex whitespace-nowrap news-ticker">
+                        <div class="flex items-center flex-shrink-0 group" id="tech-news-ticker">
+
+                        </div>
+                    </div>
+                </div>
+                <div data-tab-content="" id="business">
+                    <div class="flex whitespace-nowrap news-ticker">
+                        <div class="flex items-center flex-shrink-0 group" id="business-news-ticker">
+
+                        </div>
+                    </div>
+                </div>
+                <div data-tab-content="" id="sports">
+                    <div class="flex whitespace-nowrap news-ticker">
+                        <div class="flex items-center flex-shrink-0 group" id="sports-news-ticker">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="max-h-32 overflow-y-auto" data-tab-content="" id="saved">
+                    <div class="py-4 px-4 space-y-3">
+                        <div
+                            class="flex items-center justify-between p-3 rounded-lg bg-[var(--input-bg)] bg-opacity-70 border border-[var(--news-border)] hover:border-[var(--primary-glow)] transition-colors duration-300">
+
+                        </div>
+                        <div
+                            class="flex items-center justify-between p-3 rounded-lg bg-[var(--input-bg)] bg-opacity-70 border border-[var(--news-border)] hover:border-[var(--primary-glow)] transition-colors duration-300">
+                        </div>
+                        <div class="text-center text-[var(--text-secondary)] py-2 hidden">No saved articles yet.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // A simple script to set the greeting based on the time of day.
+        const greetingElement = document.getElementById('greeting');
+        const hour = new Date().getHours();
+        if (hour < 12) {
+            greetingElement.textContent = 'Good Morning, Guru';
+        } else if (hour < 18) {
+            greetingElement.textContent = 'Good Afternoon, Guru';
+        } else {
+            greetingElement.textContent = 'Good Evening, Guru';
+        }
+        // Tab functionality
+        const tabs = document.querySelectorAll('[data-tab-target]');
+        const tabContents = document.querySelectorAll('[data-tab-content]');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const target = document.querySelector(tab.dataset.tabTarget);
+                const isSavedTab = tab.dataset.tabTarget === '#saved';
+                const mainContent = document.querySelector('main');
+                const footer = document.querySelector('footer');
+                if (isSavedTab) {
+                    mainContent.style.display = 'none';
+                    footer.style.position = 'static';
+                    document.body.style.overflow = 'auto';
+                    const savedArticlesContainer = document.getElementById('saved');
+                    savedArticlesContainer.style.height = 'calc(100vh - ' + footer.querySelector('.border-b').offsetHeight + 'px)';
+                    savedArticlesContainer.classList.remove('max-h-32');
+                    savedArticlesContainer.classList.add('h-full');
+                } else {
+                    mainContent.style.display = 'flex';
+                    footer.style.position = 'fixed';
+                    document.body.style.overflow = 'hidden';
+                    const savedArticlesContainer = document.getElementById('saved');
+                    savedArticlesContainer.classList.add('max-h-32');
+                    savedArticlesContainer.classList.remove('h-full');
+                }
+                tabContents.forEach(tabContent => {
+                    tabContent.classList.remove('active');
+                })
+                tabs.forEach(t => {
+                    t.classList.remove('active');
+                    t.classList.remove('text-[var(--text-primary)]');
+                    t.classList.add('text-[var(--text-secondary)]');
+                    t.style.borderColor = 'transparent';
+                })
+                tab.classList.add('active');
+                tab.classList.remove('text-[var(--text-secondary)]');
+                tab.classList.add('text-[var(--text-primary)]');
+                tab.style.borderColor = 'var(--tab-active-border)';
+                target.classList.add('active');
+            })
+        });
+        // Set initial active tab border
+        const activeTab = document.querySelector('[data-tab-target].active');
+        if (activeTab) {
+            activeTab.style.borderColor = 'var(--tab-active-border)';
+        }
+        const apiKey = "pub_a4dafebff4ae43c69d38ecdd1f87f71c"; // Replace with your real API key
+
+        function createNewsItem(article) {
+            const newsItem = document.createElement("div");
+            newsItem.className = "flex items-center flex-shrink-0 group";
+
+            const link = document.createElement("a");
+            link.className = "mx-4 text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors duration-300";
+            link.href = article.link;
+            link.target = "_blank";
+            link.textContent = article.title;
+
+            const button = document.createElement("button");
+            button.className = "opacity-0 group-hover:opacity-100 text-[var(--icon-color)] hover:text-[var(--primary-glow)] transition-opacity duration-300";
+            button.innerHTML = '<i class="material-icons text-lg">bookmark_border</i>';
+
+            const dot = document.createElement("span");
+            dot.className = "text-[var(--icon-color)] mx-4";
+            dot.textContent = "•";
+
+            newsItem.appendChild(link);
+            newsItem.appendChild(button);
+            newsItem.appendChild(dot);
+
+            return newsItem;
+        }
+
+        function fetchNews(category, containerId, keyword = '') {
+            const url = `https://newsdata.io/api/1/latest?apikey=${apiKey}&category=${category}&country=in,us,gb&language=en,ta${keyword ? `&q=${encodeURIComponent(keyword)}` : ''}`;
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    const container = document.getElementById(containerId);
+                    if (!container) return console.error(`Container "${containerId}" not found`);
+
+                    container.innerHTML = ''; // Clear previous content
+
+                    const articles = data.results || [];
+                    articles.forEach(article => {
+                        container.appendChild(createNewsItem(article));
+                    });
+                })
+                .catch(error => {
+                    console.error(`Failed to fetch ${category} news:`, error);
+                });
+        }
+        function allNews(){
+            fetchNews('all', 'all-news-ticker');
+        }
+        // Individual category functions
+        function tech() {
+            fetchNews('technology', 'tech-news-ticker');
+        }
+
+        function business() {
+            fetchNews('business', 'business-news-ticker');
+        }
+
+        function sports() {
+            fetchNews('sports', 'sports-news-ticker');
+        }
+
+        function Javarelated() {
+            // 'technology' category with a keyword filter for "Java programming"
+            fetchNews('technology', 'java-news-ticker', 'java programming');
+        }
+
+        // Optional: Auto-load tech on page load
+        function getNews(){
+            tech(),sports(),Javarelated(),business();
+        }
+
+
     </script>
-</body></html>
+</body>
+
+</html>
