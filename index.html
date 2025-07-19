@@ -13,22 +13,21 @@
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <style type="text/tailwindcss">
         :root {
-            --primary-glow: #3d98f4;
-            --background-start: #101a23;
-            --background-end: #0c1218;
+            --primary-glow: #ffffff;
+            --background-start: #000000;
+            --background-end: #1a1a1a;
             --text-primary: #ffffff;
-            --text-secondary: #90adcb;
-            --input-bg: #1a2632;
-            --icon-color: #90adcb;
-            --news-bg: rgba(26, 38, 50, 0.5);
-            --news-border: rgba(61, 152, 244, 0.2);
-            --tab-active-bg: rgba(61, 152, 244, 0.1);
+            --text-secondary: #e5e5e5;
+            --input-bg: #2a2a2a;
+            --icon-color: #ffffff;
+            --news-bg: rgba(42, 42, 42, 0.8);
+            --news-border: rgba(255, 255, 255, 0.2);
+            --tab-active-bg: rgba(255, 255, 255, 0.1);
             --tab-active-border: var(--primary-glow);
         }
         body {
             font-family: 'Space Grotesk', sans-serif;
             overflow: hidden;
-
         }
         .glowing-border {
             box-shadow: 0 0 5px var(--primary-glow), 0 0 10px var(--primary-glow), 0 0 15px var(--primary-glow);
@@ -39,6 +38,59 @@
             50% { box-shadow: 0 0 10px var(--primary-glow), 0 0 20px var(--primary-glow), 0 0 30px var(--primary-glow); }
             100% { box-shadow: 0 0 5px var(--primary-glow), 0 0 10px var(--primary-glow), 0 0 15px var(--primary-glow); }
         }
+
+        /* Animated background elements */
+        .nebula-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+        }
+
+        .bg-blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            animation: float 20s infinite ease-in-out;
+            opacity: 0.3;
+        }
+
+        .blob1 {
+            top: 10%;
+            left: 10%;
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(45deg, #333333, #666666);
+            animation-delay: 0s;
+        }
+
+        .blob2 {
+            top: 60%;
+            right: 10%;
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(45deg, #444444, #777777);
+            animation-delay: -10s;
+        }
+
+        .blob3 {
+            bottom: 20%;
+            left: 30%;
+            width: 250px;
+            height: 250px;
+            background: linear-gradient(45deg, #555555, #888888);
+            animation-delay: -5s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0px, 0px) rotate(0deg); }
+            33% { transform: translate(30px, -30px) rotate(120deg); }
+            66% { transform: translate(-20px, 20px) rotate(240deg); }
+        }
+
         .particle-container {
             position: fixed;
             top: 0;
@@ -71,10 +123,10 @@
         }
         @keyframes text-glow {
             0%, 100% {
-                text-shadow: 0 0 10px rgba(61, 152, 244, 0.2), 0 0 20px rgba(61, 152, 244, 0.1), 0 0 30px rgba(61, 152, 244, 0.05);
+                text-shadow: 0 0 10px rgba(255, 255, 255, 0.2), 0 0 20px rgba(255, 255, 255, 0.1), 0 0 30px rgba(255, 255, 255, 0.05);
             }
             50% {
-                text-shadow: 0 0 20px rgba(61, 152, 244, 0.4), 0 0 40px rgba(61, 152, 244, 0.2), 0 0 60px rgba(61, 152, 244, 0.1);
+                text-shadow: 0 0 20px rgba(255, 255, 255, 0.4), 0 0 40px rgba(255, 255, 255, 0.2), 0 0 60px rgba(255, 255, 255, 0.1);
             }
         }
         .news-ticker {
@@ -98,6 +150,13 @@
 </head>
 
 <body class="bg-gradient-to-br from-[var(--background-start)] to-[var(--background-end)] text-[var(--text-primary)]">
+    <!-- Animated nebula background -->
+    <div class="nebula-bg">
+        <div class="bg-blob blob1"></div>
+        <div class="bg-blob blob2"></div>
+        <div class="bg-blob blob3"></div>
+    </div>
+
     <div class="particle-container">
         <div class="particle" style="width: 1px; height: 1px; left: 5%; animation-delay: -5s; animation-duration: 45s;">
         </div>
@@ -138,9 +197,10 @@
         <div class="particle"
             style="width: 3px; height: 3px; left: 95%; animation-delay: -7s; animation-duration: 32s;"></div>
     </div>
+
     <main class="relative flex flex-col items-center justify-center min-h-screen p-4">
         <div class="w-full max-w-2xl text-center space-y-8">
-            <h1 class="text-5xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 greeting-glow"
+            <h1 class="text-5xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300 greeting-glow"
                 id="greeting">Good Evening, Guru</h1>
             <form action="https://www.bing.com/search" class="group" method="get">
                 <div class="relative">
@@ -152,21 +212,22 @@
                         </svg>
                     </div>
                     <input autocomplete="off"
-                        class="w-full h-14 pl-12 pr-4 bg-[var(--input-bg)] text-lg text-[var(--text-primary)] placeholder-gray-500 border-2 border-transparent rounded-full focus:outline-none focus:ring-2 focus:ring-[var(--primary-glow)] focus:border-[var(--primary-glow)] transition-all duration-300 glowing-border"
+                        class="w-full h-14 pl-12 pr-4 bg-[var(--input-bg)] text-lg text-[var(--text-primary)] placeholder-gray-400 border-2 border-transparent rounded-full focus:outline-none focus:ring-2 focus:ring-[var(--primary-glow)] focus:border-[var(--primary-glow)] transition-all duration-300 glowing-border backdrop-blur-sm bg-opacity-80"
                         name="q" placeholder="Search Bing..." type="text" />
                 </div>
             </form>
             <div class="flex justify-center items-center space-x-6">
                 <a class="text-[var(--icon-color)] hover:text-[var(--primary-glow)] transition-colors duration-300 transform hover:scale-110"
-                    href="#">
+                    href="www.linkedin.com/in/guru-venkatesh-b3ab16226">
                     <svg aria-hidden="true" class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
                         <path clip-rule="evenodd"
                             d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
-                            fill-rule="evenodd"></path>
+                            fill-rule="evenodd">
+                        </path>
                     </svg>
                 </a>
                 <a class="text-[var(--icon-color)] hover:text-[var(--primary-glow)] transition-colors duration-300 transform hover:scale-110"
-                    href="#">
+                    href="https://github.com/GURUVENKATESH03">
                     <svg aria-hidden="true" class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
                         <path
                             d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z">
@@ -174,21 +235,28 @@
                     </svg>
                 </a>
                 <a class="text-[var(--icon-color)] hover:text-[var(--primary-glow)] transition-colors duration-300 transform hover:scale-110"
-                    href="#">
+                    href="mailto:guruvenkatesh11@gmail.com">
                     <svg aria-hidden="true" class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M20 4H4C2.9 4 2 4.9 2 6v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 2v.01L12 13 4 6.01V6h16zM4 18V8l8 5 8-5v10H4z"/>
                     </svg>
-
                 </a>
                 <a class="text-[var(--icon-color)] hover:text-[var(--primary-glow)] transition-colors duration-300 transform hover:scale-110"
-                    href="#">
+                    href="https://web.whatsapp.com/">
                     <svg aria-hidden="true" class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M20.52 3.48A11.87 11.87 0 0 0 12 0a11.87 11.87 0 0 0-8.52 3.48A11.87 11.87 0 0 0 0 12a11.7 11.7 0 0 0 1.64 6.02L0 24l6.24-1.63A11.83 11.83 0 0 0 12 24a11.87 11.87 0 0 0 8.52-3.48A11.87 11.87 0 0 0 24 12a11.87 11.87 0 0 0-3.48-8.52zM12 22c-1.72 0-3.41-.44-4.9-1.28l-.35-.2-3.69.96.99-3.59-.23-.36A9.88 9.88 0 0 1 2 12a10 10 0 1 1 10 10zm5.25-7.22c-.3-.15-1.76-.87-2.03-.97s-.47-.15-.67.15-.77.97-.94 1.17-.35.22-.65.07a8.02 8.02 0 0 1-2.37-1.46 8.68 8.68 0 0 1-1.6-1.98c-.17-.3-.02-.47.13-.63.14-.14.3-.36.45-.54.15-.18.2-.3.3-.5s.05-.37-.02-.52c-.07-.15-.67-1.6-.92-2.19s-.5-.52-.67-.53h-.57c-.15 0-.52.07-.79.37s-1.03 1.01-1.03 2.45 1.05 2.84 1.2 3.04a11.38 11.38 0 0 0 4.03 3.67 11.71 11.71 0 0 0 1.88.7c.79.25 1.52.2 2.1.13.64-.1 1.96-.8 2.24-1.57.28-.76.28-1.41.2-1.57-.07-.16-.27-.24-.57-.38z"/>
                     </svg>
                 </a>
+                <a class="text-[var(--icon-color)] hover:text-[var(--primary-glow)] transition-colors duration-300 transform hover:scale-110"
+                    href="https://www.perplexity.ai/">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" fill="currentColor" class="bi bi-perplexity" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8 .188a.5.5 0 0 1 .503.5V4.03l3.022-2.92.059-.048a.51.51 0 0 1 .49-.054.5.5 0 0 1 .306.46v3.247h1.117l.1.01a.5.5 0 0 1 .403.49v5.558a.5.5 0 0 1-.503.5H12.38v3.258a.5.5 0 0 1-.312.462.51.51 0 0 1-.55-.11l-3.016-3.018v3.448c0 .275-.225.5-.503.5a.5.5 0 0 1-.503-.5v-3.448l-3.018 3.019a.51.51 0 0 1-.548.11.5.5 0 0 1-.312-.463v-3.258H2.503a.5.5 0 0 1-.503-.5V5.215l.01-.1c.047-.229.25-.4.493-.4H3.62V1.469l.006-.074a.5.5 0 0 1 .302-.387.51.51 0 0 1 .547.102l3.023 2.92V.687c0-.276.225-.5.503-.5M4.626 9.333v3.984l2.87-2.872v-4.01zm3.877 1.113 2.871 2.871V9.333l-2.87-2.897zm3.733-1.668a.5.5 0 0 1 .145.35v1.145h.612V5.715H9.201zm-9.23 1.495h.613V9.13c0-.131.052-.257.145-.35l3.033-3.064h-3.79zm1.62-5.558H6.76L4.626 2.652zm4.613 0h2.134V2.652z"/>
+                    </svg>
+
+                </a>
             </div>
         </div>
     </main>
+
     <footer
         class="fixed bottom-0 left-0 w-full bg-[var(--news-bg)] backdrop-blur-sm border-t border-[var(--news-border)]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -214,35 +282,31 @@
                     </button>
                 </div>
                 <div class="relative w-1/3">
-                    <button onclick="getNews()">Get News</button>
+                    <button onclick="getNews()" class="text-white hover:text-gray-300 px-4 py-2 border border-white rounded transition-colors duration-300">Get News</button>
                 </div>
             </div>
             <div class="py-3 overflow-hidden">
                 <div class="active" data-tab-content="" id="allnews">
                     <div class="flex whitespace-nowrap news-ticker">
                         <div class="flex items-center flex-shrink-0 group" id="java-news-ticker">
-
                         </div>
                     </div>
                 </div>
                 <div class="active" data-tab-content="" id="tech">
                     <div class="flex whitespace-nowrap news-ticker">
                         <div class="flex items-center flex-shrink-0 group" id="tech-news-ticker">
-
                         </div>
                     </div>
                 </div>
                 <div data-tab-content="" id="business">
                     <div class="flex whitespace-nowrap news-ticker">
                         <div class="flex items-center flex-shrink-0 group" id="business-news-ticker">
-
                         </div>
                     </div>
                 </div>
                 <div data-tab-content="" id="sports">
                     <div class="flex whitespace-nowrap news-ticker">
                         <div class="flex items-center flex-shrink-0 group" id="sports-news-ticker">
-
                         </div>
                     </div>
                 </div>
@@ -250,7 +314,6 @@
                     <div class="py-4 px-4 space-y-3">
                         <div
                             class="flex items-center justify-between p-3 rounded-lg bg-[var(--input-bg)] bg-opacity-70 border border-[var(--news-border)] hover:border-[var(--primary-glow)] transition-colors duration-300">
-
                         </div>
                         <div
                             class="flex items-center justify-between p-3 rounded-lg bg-[var(--input-bg)] bg-opacity-70 border border-[var(--news-border)] hover:border-[var(--primary-glow)] transition-colors duration-300">
@@ -261,6 +324,7 @@
             </div>
         </div>
     </footer>
+
     <script>
         // A simple script to set the greeting based on the time of day.
         const greetingElement = document.getElementById('greeting');
@@ -390,8 +454,6 @@
         function getNews(){
             tech(),sports(),Javarelated(),business();
         }
-
-
     </script>
 </body>
 
