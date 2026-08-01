@@ -1,152 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guru Venkatesh // Backend Engineer</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Guru's Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-    <!-- Status Bar (tmux style) -->
+    <!-- TMUX Status Bar -->
     <header class="status-bar">
         <div class="status-left">
             <span class="status-bg-amber">[0]</span>
             <span class="status-muted">zsh</span>
             <span class="status-divider">|</span>
-            <span>guru@portfolio: ~/</span>
+            <span>guru@dashboard: ~/home</span>
         </div>
         <div class="status-right">
-            <span id="current-section" class="status-muted">section: hero</span>
+            <span id="current-section" class="status-muted">section: feed</span>
             <span class="status-divider">|</span>
             <span id="clock" class="status-muted">00:00:00</span>
         </div>
     </header>
 
+    <!-- Subtle animated background -->
+    <div class="bg-grid"></div>
+
     <main class="container">
         
-        <!-- Hero Section -->
+        <!-- Hero/Search Pane -->
         <section id="hero" class="pane hero-pane">
-            <div class="pane-label">~/hero</div>
+            <div class="pane-label">~/dashboard</div>
             <div class="pane-content">
-                <div id="boot-sequence" class="boot-log">
-                    <!-- JS will inject boot lines here -->
-                </div>
-                <div id="hero-content" class="hero-content" aria-hidden="true">
-                    <h1 class="hero-name">GURU VENKATESH</h1>
-                    <h2 class="hero-role">Backend &amp; Systems Engineer</h2>
-                    <p class="hero-pitch">Building resilient, high-throughput backend systems and clean APIs.</p>
-                    <div class="hero-cta">
-                        <a href="#projects" class="btn-primary">View Work</a>
-                        <a href="#contact" class="btn-secondary">./contact.sh</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="pane fade-in">
-            <div class="pane-label">~/about.md</div>
-            <div class="pane-content">
-                <p class="text-body">
-                    Backend engineer specializing in system architecture, database optimization, and scalable APIs. 
-                    I focus on writing clean, maintainable code that solves complex business logic without unnecessary overhead. 
-                    Passionate about distributed systems, open-source contribution, and automating tedious workflows.
-                </p>
-            </div>
-        </section>
-
-        <!-- Experience Section -->
-        <section id="experience" class="pane fade-in">
-            <div class="pane-label">~/experience.log</div>
-            <div class="pane-content">
-                <div class="log-stream">
-                    <div class="log-entry">
-                        <span class="log-timestamp">2022-PRESENT</span>
-                        <span class="log-level warn">[INFO]</span>
-                        <span class="log-message">Senior Backend Engineer at Tech Corp — Led migration to microservices, reducing latency by 40%.</span>
-                    </div>
-                    <div class="log-entry">
-                        <span class="log-timestamp">2020-2022</span>
-                        <span class="log-level info">[INFO]</span>
-                        <span class="log-message">Software Engineer at DataSys — Built internal data pipelines processing 2TB+ daily.</span>
-                    </div>
-                    <div class="log-entry">
-                        <span class="log-timestamp">2019-2020</span>
-                        <span class="log-level info">[DEBUG]</span>
-                        <span class="log-message">Junior Developer at Startup LLC — Implemented core REST API features and bug fixes.</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="pane fade-in">
-            <div class="pane-label">~/projects/</div>
-            <div class="pane-content">
-                <div class="project-grid">
-                    <div class="project-card">
-                        <div class="project-header">
-                            <span class="dir-icon">▸</span> distributed-cache/
+                
+                <!-- Boot Sequence -->
+                <div id="boot-sequence" class="boot-log"></div>
+                
+                <!-- Actual Dashboard Content -->
+                <div id="dashboard-content" class="dashboard-content" aria-hidden="true">
+                    <h1 id="greeting" class="greeting">Good Evening, Guru</h1>
+                    
+                    <form action="https://www.bing.com/search" class="search-form" method="get">
+                        <div class="search-input-wrapper">
+                            <span class="search-prompt">$</span>
+                            <input autocomplete="off" id="search-input" name="q" placeholder="Search Bing..." type="text" />
+                            <span class="search-cursor"></span>
                         </div>
-                        <p class="project-desc">A Redis-like in-memory key-value store with LRU eviction and persistence.</p>
-                        <div class="tag-container">
-                            <span class="tag">Java</span>
-                            <span class="tag">TCP/IP</span>
-                            <span class="tag">Multithreading</span>
-                        </div>
-                        <a href="https://github.com/GURUVENKATESH03" target="_blank" rel="noopener noreferrer" class="project-link">git checkout</a>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-header">
-                            <span class="dir-icon">▸</span> api-gateway/
-                        </div>
-                        <p class="project-desc">Custom API gateway handling routing, rate-limiting, and JWT authentication.</p>
-                        <div class="tag-container">
-                            <span class="tag">Go</span>
-                            <span class="tag">Redis</span>
-                            <span class="tag">Docker</span>
-                        </div>
-                        <a href="https://github.com/GURUVENKATESH03" target="_blank" rel="noopener noreferrer" class="project-link">git checkout</a>
+                    </form>
+                    
+                    <div class="quick-links">
+                        <a class="link-item" href="https://www.linkedin.com/in/guru-venkatesh-b3ab16226" target="_blank" rel="noopener noreferrer">
+                            <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" fill-rule="evenodd"></path></svg>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a class="link-item" href="https://github.com/GURUVENKATESH03" target="_blank" rel="noopener noreferrer">
+                            <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>
+                            <span>GitHub</span>
+                        </a>
+                        <a class="link-item" href="mailto:guruvenkatesh11@gmail.com">
+                            <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4C2.9 4 2 4.9 2 6v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 2v.01L12 13 4 6.01V6h16zM4 18V8l8 5 8-5v10H4z"/></svg>
+                            <span>Email</span>
+                        </a>
+                        <a class="link-item" href="https://web.whatsapp.com/" target="_blank" rel="noopener noreferrer">
+                            <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M20.52 3.48A11.87 11.87 0 0 0 12 0a11.87 11.87 0 0 0-8.52 3.48A11.87 11.87 0 0 0 0 12a11.7 11.7 0 0 0 1.64 6.02L0 24l6.24-1.63A11.83 11.83 0 0 0 12 24a11.87 11.87 0 0 0 8.52-3.48A11.87 11.87 0 0 0 24 12a11.87 11.87 0 0 0-3.48-8.52zM12 22c-1.72 0-3.41-.44-4.9-1.28l-.35-.2-3.69.96.99-3.59-.23-.36A9.88 9.88 0 0 1 2 12a10 10 0 1 1 10 10zm5.25-7.22c-.3-.15-1.76-.87-2.03-.97s-.47-.15-.67.15-.77.97-.94 1.17-.35.22-.65.07a8.02 8.02 0 0 1-2.37-1.46 8.68 8.68 0 0 1-1.6-1.98c-.17-.3-.02-.47.13-.63.14-.14.3-.36.45-.54.15-.18.2-.3.3-.5s.05-.37-.02-.52c-.07-.15-.67-1.6-.92-2.19s-.5-.52-.67-.53h-.57c-.15 0-.52.07-.79.37s-1.03 1.01-1.03 2.45 1.05 2.84 1.2 3.04a11.38 11.38 0 0 0 4.03 3.67 11.71 11.71 0 0 0 1.88.7c.79.25 1.52.2 2.1.13.64-.1 1.96-.8 2.24-1.57.28-.76.28-1.41.2-1.57-.07-.16-.27-.24-.57-.38z"/></svg>
+                            <span>WhatsApp</span>
+                        </a>
+                        <a class="link-item" href="https://www.perplexity.ai/" target="_blank" rel="noopener noreferrer">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-perplexity" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 .188a.5.5 0 0 1 .503.5V4.03l3.022-2.92.059-.048a.51.51 0 0 1 .49-.054.5.5 0 0 1 .306.46v3.247h1.117l.1.01a.5.5 0 0 1 .403.49v5.558a.5.5 0 0 1-.503.5H12.38v3.258a.5.5 0 0 1-.312.462.51.51 0 0 1-.55-.11l-3.016-3.018v3.448c0 .275-.225.5-.503.5a.5.5 0 0 1-.503-.5v-3.448l-3.018 3.019a.51.51 0 0 1-.548.11.5.5 0 0 1-.312-.463v-3.258H2.503a.5.5 0 0 1-.503-.5V5.215l.01-.1c.047-.229.25-.4.493-.4H3.62V1.469l.006-.074a.5.5 0 0 1 .302-.387.51.51 0 0 1 .547.102l3.023 2.92V.687c0-.276.225-.5.503-.5M4.626 9.333v3.984l2.87-2.872v-4.01zm3.877 1.113 2.871 2.871V9.333l-2.87-2.897zm3.733-1.668a.5.5 0 0 1 .145.35v1.145h.612V5.715H9.201zm-9.23 1.495h.613V9.13c0-.131.052-.257.145-.35l3.033-3.064h-3.79zm1.62-5.558H6.76L4.626 2.652zm4.613 0h2.134V2.652z"/></svg>
+                            <span>Perplexity</span>
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- Skills Section -->
-        <section id="skills" class="pane fade-in">
-            <div class="pane-label">~/stack.json</div>
-            <div class="pane-content">
-                <pre class="json-block"><code>{
-  <span class="json-key">"languages"</span>: [<span class="json-value">"Java", "Go", "Python", "SQL"</span>],
-  <span class="json-key">"frameworks"</span>: [<span class="json-value">"Spring Boot", "gRPC", "Express"</span>],
-  <span class="json-key">"cloud_infra"</span>: [<span class="json-value">"AWS (EC2/S3/RDS)", "Docker", "Kubernetes"</span>],
-  <span class="json-key">"databases"</span>: [<span class="json-value">"PostgreSQL", "MongoDB", "Redis"</span>],
-  <span class="json-key">"tools"</span>: [<span class="json-value">"Kafka", "Git", "Grafana", "Jenkins"</span>]
-}</code></pre>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="pane fade-in">
-            <div class="pane-label">~/contact.sh</div>
-            <div class="pane-content">
-                <div class="terminal-output">
-                    <p><span class="prompt">guru@portfolio:~$</span> ./connect.sh</p>
-                    <p class="text-muted">Initializing secure channel...</p>
-                    <ul class="contact-list">
-                        <li><span class="text-muted">email:</span> <a href="mailto:guruvenkatesh11@gmail.com" class="link-teal">guruvenkatesh11@gmail.com</a></li>
-                        <li><span class="text-muted">github:</span> <a href="https://github.com/GURUVENKATESH03" target="_blank" rel="noopener noreferrer" class="link-teal">github.com/GURUVENKATESH03</a></li>
-                        <li><span class="text-muted">linkedin:</span> <a href="https://www.linkedin.com/in/guru-venkatesh-b3ab16226" target="_blank" rel="noopener noreferrer" class="link-teal">linkedin.com/in/guru-venkatesh</a></li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
     </main>
+
+    <!-- News Feed Pane (Footer) -->
+    <footer id="news-footer" class="pane news-footer">
+        <div class="pane-label">~/feed.log</div>
+        <div class="news-tabs-container">
+            <div class="news-tabs" data-tabs-container="">
+                <button class="tab-btn active" data-tab-target="#java-news">Java</button>
+                <button class="tab-btn" data-tab-target="#tech-news">Tech</button>
+                <button class="tab-btn" data-tab-target="#business-news">Business</button>
+                <button class="tab-btn" data-tab-target="#sports-news">Sports</button>
+                <button class="tab-btn saved-tab" data-tab-target="#saved-news">
+                    <i class="material-icons text-sm">bookmark_border</i> Saved
+                </button>
+                <div class="ml-auto">
+                    <button onclick="getNews()" class="fetch-btn">./fetch_news.sh</button>
+                </div>
+            </div>
+            <div class="news-content-wrapper">
+                <div class="tab-content active" data-tab-content="" id="java-news">
+                    <div class="news-ticker-wrapper">
+                        <div class="news-ticker" id="java-news-ticker"></div>
+                    </div>
+                </div>
+                <div class="tab-content" data-tab-content="" id="tech-news">
+                    <div class="news-ticker-wrapper">
+                        <div class="news-ticker" id="tech-news-ticker"></div>
+                    </div>
+                </div>
+                <div class="tab-content" data-tab-content="" id="business-news">
+                    <div class="news-ticker-wrapper">
+                        <div class="news-ticker" id="business-news-ticker"></div>
+                    </div>
+                </div>
+                <div class="tab-content" data-tab-content="" id="sports-news">
+                    <div class="news-ticker-wrapper">
+                        <div class="news-ticker" id="sports-news-ticker"></div>
+                    </div>
+                </div>
+                <div class="tab-content saved-list" data-tab-content="" id="saved-news">
+                    <div class="p-4 space-y-2">
+                        <div class="saved-item">No saved articles yet.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>

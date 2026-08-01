@@ -13,29 +13,38 @@ setInterval(updateClock, 1000);
 updateClock();
 
 // =========================================
+// GREETING
+// =========================================
+const greetingElement = document.getElementById('greeting');
+const hour = new Date().getHours();
+if (hour < 12) {
+    greetingElement.textContent = 'Good Morning, Guru';
+} else if (hour < 18) {
+    greetingElement.textContent = 'Good Afternoon, Guru';
+} else {
+    greetingElement.textContent = 'Good Evening, Guru';
+}
+
+// =========================================
 // HERO BOOT SEQUENCE
 // =========================================
 const bootLines = [
-    { text: "Starting PortfolioApplication...", delay: 300, class: "" },
-    { text: "Loading profile: backend-engineer", delay: 200, class: "" },
-    { text: "Tomcat initialized with port(s): 8080 (http)", delay: 400, class: "" },
-    { text: "Mounted: about, experience, projects, contact", delay: 300, class: "" },
-    { text: "Started PortfolioApplication in 0.834 seconds (process running)", delay: 400, class: "success" }
+    { text: "Starting DashboardApplication...", delay: 300, class: "" },
+    { text: "Loading profile: user='guru'", delay: 200, class: "" },
+    { text: "Initializing widgets...", delay: 400, class: "" },
+    { text: "Mounted: search, quick-links, feed", delay: 300, class: "" },
+    { text: "Started DashboardApplication in 0.812 seconds", delay: 400, class: "success" }
 ];
 
 const bootSequence = document.getElementById('boot-sequence');
-const heroContent = document.getElementById('hero-content');
-
-// Check for reduced motion preference
+const dashboardContent = document.getElementById('dashboard-content');
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 if (prefersReducedMotion) {
-    // If reduced motion, bypass animation immediately
     bootSequence.style.display = 'none';
-    heroContent.classList.add('visible');
-    heroContent.setAttribute('aria-hidden', 'false');
+    dashboardContent.classList.add('visible');
+    dashboardContent.setAttribute('aria-hidden', 'false');
 } else {
-    // Run typing sequence
     let lineIndex = 0;
     
     async function runBootSequence() {
@@ -45,76 +54,123 @@ if (prefersReducedMotion) {
             lineDiv.className = `boot-line ${line.class}`;
             bootSequence.appendChild(lineDiv);
             
-            // Type out characters
             for (let i = 0; i <= line.text.length; i++) {
                 lineDiv.textContent = line.text.substring(0, i);
-                await new Promise(resolve => setTimeout(resolve, 15)); // Typing speed
+                await new Promise(resolve => setTimeout(resolve, 15));
             }
             
             await new Promise(resolve => setTimeout(resolve, line.delay));
             lineIndex++;
         }
         
-        // Reveal hero content after logs finish
         await new Promise(resolve => setTimeout(resolve, 300));
         bootSequence.style.transition = "opacity 0.5s ease";
         bootSequence.style.opacity = "0";
         
         setTimeout(() => {
             bootSequence.style.display = 'none';
-            heroContent.classList.add('visible');
-            heroContent.setAttribute('aria-hidden', 'false');
+            dashboardContent.classList.add('visible');
+            dashboardContent.setAttribute('aria-hidden', 'false');
+            document.getElementById('search-input').focus();
         }, 500);
     }
     
-    // Start sequence on load
     window.addEventListener('load', runBootSequence);
 }
 
 // =========================================
-// SCROLL FADE-IN ANIMATIONS
+// NEWS TABS LOGIC
 // =========================================
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: "0px 0px -50px 0px"
-};
+const tabs = document.querySelectorAll('[data-tab-target]');
+const tabContents = document.querySelectorAll('[data-tab-content]');
+const footer = document.getElementById('news-footer');
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target); // Stop observing once visible
-            
-            // Update status bar section indicator
-            const sectionId = entry.target.id;
-            const statusSection = document.getElementById('current-section');
-            if (statusSection && sectionId) {
-                statusSection.textContent = `section: ${sectionId}`;
-            }
-        }
-    });
-}, observerOptions);
-
-// Observe all elements with fade-in class
-document.querySelectorAll('.fade-in').forEach(el => {
-    observer.observe(el);
-});
-
-// =========================================
-// SMOOTH SCROLL FOR ANCHORS
-// =========================================
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
+tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        const target = document.querySelector(tab.dataset.tabTarget);
+        const isSavedTab = tab.dataset.tabTarget === '#saved-news';
         
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-            e.preventDefault();
-            targetElement.scrollIntoView({
-                behavior: prefersReducedMotion ? 'auto' : 'smooth',
-                block: 'start'
-            });
+        // Handle Saved Tab expansion
+        if (isSavedTab) {
+            footer.style.position = 'static';
+            document.body.style.overflow = 'auto';
+            document.body.style.height = 'auto';
+        } else {
+            footer.style.position = 'fixed';
+            document.body.style.overflow = 'hidden';
+            document.body.style.height = '100%';
         }
+        
+        // Toggle active classes
+        tabContents.forEach(tc => tc.classList.remove('active'));
+        tabs.forEach(t => t.classList.remove('active'));
+        
+        tab.classList.add('active');
+        target.classList.add('active');
     });
 });
+
+// =========================================
+// NEWS FETCHING LOGIC
+// =========================================
+const apiKey = "pub_a4dafebff4ae43c69d38ecdd1f87f71c"; // Replace with your real API key
+
+function createNewsItem(article) {
+    const newsItem = document.createElement("div");
+    newsItem.className = "news-item";
+
+    const link = document.createElement("a");
+    link.href = article.link;
+    link.target = "_blank";
+    link.textContent = article.title;
+
+    const dot = document.createElement("span");
+    dot.className = "separator";
+    dot.textContent = "•";
+
+    newsItem.appendChild(link);
+    newsItem.appendChild(dot);
+
+    return newsItem;
+}
+
+function fetchNews(category, containerId, keyword = '') {
+    const url = `https://newsdata.io/api/1/latest?apikey=${apiKey}&category=${category}&country=in,us,gb&language=en,ta${keyword ? `&q=${encodeURIComponent(keyword)}` : ''}`;
+
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            const container = document.getElementById(containerId);
+            if (!container) return console.error(`Container "${containerId}" not found`);
+
+            container.innerHTML = ''; // Clear loading/previous
+
+            const articles = data.results || [];
+            if (articles.length === 0) {
+                container.innerHTML = '<span class="news-item"><a>No articles found.</a></span>';
+                return;
+            }
+            
+            // Duplicate articles for seamless infinite scroll effect
+            articles.forEach(article => container.appendChild(createNewsItem(article)));
+            articles.forEach(article => container.appendChild(createNewsItem(article)));
+            
+        })
+        .catch(error => {
+            console.error(`Failed to fetch ${category} news:`, error);
+            const container = document.getElementById(containerId);
+            if(container) container.innerHTML = '<span class="news-item"><a>Error loading feed.</a></span>';
+        });
+}
+
+function tech() { fetchNews('technology', 'tech-news-ticker'); }
+function business() { fetchNews('business', 'business-news-ticker'); }
+function sports() { fetchNews('sports', 'sports-news-ticker'); }
+function Javarelated() { fetchNews('technology', 'java-news-ticker', 'java programming'); }
+
+function getNews() {
+    tech(); sports(); Javarelated(); business();
+}
+
+// Auto-load news on startup
+window.addEventListener('load', getNews);
